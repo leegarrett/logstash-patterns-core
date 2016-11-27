@@ -4,8 +4,8 @@
 ## http://code.google.com/p/haproxy-docs/wiki/HTTPLogFormat
 ## http://code.google.com/p/haproxy-docs/wiki/TCPLogFormat
 
-HAPROXYTIME (?!<[0-9])%{HOUR:haproxy_hour}:%{MINUTE:haproxy_minute}(?::%{SECOND:haproxy_second})(?![0-9])
-HAPROXYDATE %{MONTHDAY:haproxy_monthday}/%{MONTH:haproxy_month}/%{YEAR:haproxy_year}:%{HAPROXYTIME:haproxy_time}.%{INT:haproxy_milliseconds}
+HAPROXYTIME (?!<[0-9])%{HOUR}:%{MINUTE}(?::%{SECOND})(?![0-9])
+HAPROXYDATE %{MONTHDAY}/%{MONTH}/%{YEAR}:%{HAPROXYTIME}.%{INT}
 
 # Override these default patterns to parse out what is captured in your haproxy.cfg
 HAPROXYCAPTUREDREQUESTHEADERS %{DATA:captured_request_headers}
